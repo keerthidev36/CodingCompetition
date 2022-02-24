@@ -15,7 +15,7 @@ const app=express();
     ]
     
 
-// const homeRouter=require('./src/routes/homeRoutes')(nav)
+//  const homeRouter=require('./src/routes/homeRoutes')(nav)
  
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
@@ -23,7 +23,7 @@ app.set('view engine','ejs');
 app.set('views','./src/views');//either . or __dirname 
 
 
-//  app.use('/home',homeRouter);
+  // app.use('/home',homeRouter);
 
 
 
@@ -44,9 +44,11 @@ app.get('/home',function(req,res){
            title:"send Email"
           });
     });
-    app.post('/home',function(req,res){
-        res.send("Mail Sent Successfully");
+    app.post('/mailer',function(req,res){
+        res.send("Mail sent Successfully");
         });
     
+
+        
 
 app.listen(process.env.PORT || 9000);
